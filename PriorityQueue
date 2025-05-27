@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main{
+    static void dfs(int n,boolean[] visited,List<List<Integer>> adj){
+        visited[n]=true;
+        System.out.println(n);
+        for(int nei:adj.get(n)){
+            if(!visited[nei]){
+                dfs(nei,visited,adj);
+            }
+        }
+    }
+	public static void main(String[] args) {
+	    List<List<Integer>> adj=new ArrayList<>();
+	    int v=4;
+	    for(int i=1;i<=v;i++){
+	        adj.add(new ArrayList<>());
+	    }
+	    adj.get(0).add(1);
+	    adj.get(0).add(2);
+	    adj.get(0).add(3);
+	    adj.get(1).add(0);
+	    adj.get(1).add(3);
+	    adj.get(2).add(0);
+	    adj.get(3).add(0);
+	    adj.get(3).add(1);
+	    boolean[] visited=new boolean[v];
+	    dfs(2,visited,adj);
+	}
+}
