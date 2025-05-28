@@ -1,0 +1,18 @@
+public class Main
+{
+	public static void main(String[] args) {
+		String str="leader";
+		StringBuffer s=new StringBuffer(str);
+		int l=0;
+		int r=s.length()-1;
+		while(l<r){
+		    char x=s.charAt(l);
+		    char y=s.charAt(r);
+		    s.setCharAt(l,y);
+		    s.setCharAt(r,x);
+		    l++;
+		    r--;
+		}
+		System.out.println(s.toString());
+	}
+}
